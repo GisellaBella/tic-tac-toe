@@ -33,10 +33,12 @@ th {
   border:1px solid black;
 
 }
-td.square{
+.square{
   border:1px solid black;
   width: 100px;
   height:100px;
   padding:20px;
-
+  font-family: 'verdana' ;
+  font-size: 25px;
+  cursor:pointer;
 }
