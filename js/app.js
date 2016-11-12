@@ -3,6 +3,10 @@ window.onload=function(){
 
 console.log ("so far so good");
 
+var test = document.getElementById("messageBox");
+test.textContent = "testing";
+var text = test.textContent;
+
 function newGame() { //function that creates a new game.
 document.hoozTurn = "X";//starting with player X
 setMessage ("<h1> Let's Play! </h1>");
@@ -15,14 +19,15 @@ document.getElementById("messageBox");
 messageBox.innerHTML = msg;
 }
 
-
-
 function changePlayer() {
 if (document.hoozTurn=="X")//checking on the condition of who just clicked, x or o
 document.hoozTurn = "O"; //changed the player to O
 else document.hoozTurn = "X"; //otherwise it is X's turn.
 } 
-  
+
+function nextMv(square){
+  square.innerText= document.hoozTurn;
+}
 
 
  };
