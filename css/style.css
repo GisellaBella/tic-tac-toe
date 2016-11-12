@@ -1,17 +1,42 @@
 
-  .container{
-  	width:600px;
+  .container
+    {
+width: 50%; 
+margin: auto;
+    }
+
+body
+  { 
+  font-family: 'Slabo 27px', serif;
   }
 
-  .row {
-    color: red;
-    border: 2px solid blue;
-    width: 100%;
-    margin: 3px;
-    text-align: center;
+h1 {
+  font-size: 25px;
+  font-weight: bold;
+}
+header {
+  text-align: center;
+  padding: 50px;
+}
+
+table /* style for the game squares*/
+  {
+  text-align: center;
+  border:1px solid black;
+  margin: 0 auto;
   }
 
-  .floatLeft{
-  	float:left;
-  	display: inline-block;
-  }
+th {
+  border:1px solid black;
+
+}
+td {
+  border:1px solid black;
+  width: 100px;
+  height:100px;
+  padding:20px;
+
+}
+ #prompt {
+  
+ }
