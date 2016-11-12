@@ -1,15 +1,30 @@
 
-document.onload="newGame";
-var whoTurn = ();
+document.onload='newGame()';
+
 
 function newGame() //function that creates a new game.
-    { document.whoTurn= "X";//starting with player X
+    { document.whoTurn = "X";//starting with player X
       showPrompt("<h1>Let's Play!</h1>");
     }
 function showPrompt (prompt){
   document.getElementById('#prompt').innerHTML=prompt; //function to display message to player using div id prompt
 }
 
+function onClick(square) { //creates the clickable box showing X for first turn
+  square.innerHTML=document.whoTurn;
+  changePlayer(); //after box is clicked will change player.
+} 
+
+function changePlayer (whoTurn){
+  if (document.whoTurn=="X"){
+    document.whoTurn = "O"; //changed the player to O
+  }
+  else {
+    document.whoTurn = "X"; //otherwise it is X's turn.
+  }
+}
+
+console.log ("okay, okay");
 
 
 
