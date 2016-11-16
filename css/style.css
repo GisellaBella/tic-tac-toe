@@ -10,6 +10,11 @@ body
   font-family: 'Slabo 27px', serif;
   }
 
+h2 {
+  font-size:25px;
+  font-weight: bold;
+}
+
  #messageBox {
   font-size: 25px;
   font-weight: bold;
@@ -26,7 +31,7 @@ table /* style for the game squares*/
   {
   text-align: center;
   border:1px solid black;
-  margin: 0 auto;
+  margin: 0 auto; 
   }
 
 th {
