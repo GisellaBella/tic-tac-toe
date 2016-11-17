@@ -1,37 +1,35 @@
 
-window.onload=function(){
+window.onload=function(){ //loading game
 
 
 function newGame() { //function that creates a new game.
-setMessage ("<h1> Let's Play! </h1>");
+setMessage ("<h1> Let's Play! </h1>"); //start message
 }
 
 newGame();
 
 
 var msg;
-function setMessage(msg) {
-  document.getElementById("messageBox");
-  messageBox.innerHTML = msg;
+    function setMessage(msg) {
+    document.getElementById("messageBox");
+    messageBox.innerHTML = msg;
 }
 
 var winningCombinations = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
-
-function testFunction() {
-    console.log("Hello World");
-}
 
 var squares = document.getElementsByClassName('square');
 var inPlayArray= []; //squares that have been played.
 
 
-function squareListener (){ 
+function squareListener () { 
      console.log("squareListener");// adding the event listener for someone clicking on a square
      for (var i = 0; i <=squares.length-1; i++ ) {
      squares[i].addEventListener('click', setSquare);
      }
+}     
 
-/*function chunkIntoGroupsOfThree(inPlayArray) { //trying to chunk the array in order of click to groups of three
+/*function chunkIntoGroupsOfThree(inPlayArray) { //trying to chunk the array in 
+    order of 3 to see if i can check arrays against winning combos.
   var results = [];
   length = function (){
     Math.ceil(inPlayArray.length / 3);
@@ -63,8 +61,7 @@ function setSquare (event)   {//setting the square to X or O, depending on what 
     if (inPlayArray.length === 0) { //no one has made a move yet.
     inPlayArray.push(event.target.id); //collecting to inPlayArray
     event.target.innerHTML = "<h2> X </h2"; //x always goes first
-  }
-   
+    }
   else if ( inPlayArray.length === 1 || 
             inPlayArray.length === 3 || 
             inPlayArray.length === 5 || 
@@ -72,6 +69,7 @@ function setSquare (event)   {//setting the square to X or O, depending on what 
     inPlayArray.push(event.target.id);  ////collecting to inPlayArray
     event.target.innerHTML = "<h2> O </h2>";
     console.log (inPlayArray);
+    setMessage ("<h2> It's X's Move </h2");
     checkForWin();
     }
 
@@ -79,24 +77,27 @@ function setSquare (event)   {//setting the square to X or O, depending on what 
     inPlayArray.push(event.target.id);  ////collecting to inPlayArray
     event.target.innerHTML = "<h2> X </h2>";
     console.log (inPlayArray);
+    setMessage ("<h2> It's O's Move </h2");
     checkForWin();
     }
 }
 
-/*function checkForWin (){
-    for (i=0;i<=winningCombinations.length-1; i++) 
-      if ( winningCombinations[i] == (inPlayArray[0] && inPlayArray[1] && inPlayArray[2]) || 
-           winningCombinations[i] == (inPlayArray[3] && inPlayArray[4] && inPlayArray[5]) ||
-           winningCombinations[i] == (inPlayArray[6] && inPlayArray[7] && inPlayArray[8]) )
 
-      setMessage ("We have a winner!");
+
+
+function checkForWin (){
+    for (i=0;i<=winningCombinations.length-1; i++) //iterating through winning combos array
+      if ( winningCombinations[i] == (inPlayArray[0],inPlayArray[1],inPlayArray[2]) || //trying to compare against the value in inPlayArray
+           winningCombinations[i] == (inPlayArray[3],inPlayArray[4],inPlayArray[5]) ||
+           winningCombinations[i] == (inPlayArray[6], inPlayArray[7], inPlayArray[8]) )
+       setMessage ("We have a winner!");
+
       else if (event.target.innerHTML == "O") {
       setMessage ("<h2> It's X's Move </h2");
       }
+      
       else if (event.target.innerHTML == "X") {
       setMessage ("<h2> It's O's Move </h2");
       }
     }
-*/
-  }  
-  };
+    };
